@@ -50,7 +50,7 @@ def get_mainpage_cards(driver, url):
                     #CARGENERATION = href.split('/')[-2]
                     #CARGENERATIONS.append(CARGENERATION)
 
-                    CARDATA.append([href.split('/')[-1],CARBRAND,CARMODEL])
+                    CARDATA.append([href.split('/')[-1],CARBRAND,CARMODEL,CARGEN])
 
                     car_url = urlCar.rsplit('/',1)[0]+'/'+CARID
                     car_urls.append(car_url)
@@ -83,14 +83,15 @@ def allscrolldown(driver):
         i+=1
         print(i)
 
-urlCar = 'https://cars.av.by/opel/corsa/c-2000-2003' 
+#urlCar = 'https://cars.av.by/opel/corsa/c-2000-2003' 
 
 
-#urlCar = 'https://cars.av.by/bmw/3-seriya/e90-e91-e92-e93-2005-2010'
+urlCar = 'https://cars.av.by/bmw/3-seriya/e90-e91-e92-e93-2005-2010'
 #urlCar = 'https://cars.av.by/bmw/3-seriya/e90-e91-e92e93-2008-2014-restajling'
 
-CARMODEL = urlCar.split('/')[-1].upper()
-CARBRAND = urlCar.split('/')[-2].upper()
+CARGEN = urlCar.split('/')[-1].upper()
+CARMODEL = urlCar.split('/')[-2].upper()
+CARBRAND = urlCar.split('/')[-3].upper()
 
 
 if __name__ == "__main__":
